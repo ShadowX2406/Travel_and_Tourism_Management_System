@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame implements ActionListener {
     String username;
     JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkPackages,bookPackage,viewPackage;
-    JButton payments,viewHotels,destination,bookHotel,viewBookedHotel,about;
+    JButton payments,viewHotels,destination,bookHotel,viewBookedHotel,about ,deletePersonalDetails;
     Dashboard(String username){
         this.username = username;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -67,12 +67,13 @@ public class Dashboard extends JFrame implements ActionListener {
         viewPersonalDetails.addActionListener(this);
         p2.add(viewPersonalDetails);
 
-        JButton deletePersonalDetails = new JButton("Delete Personal Details");
+        deletePersonalDetails = new JButton("Delete Personal Details");
         deletePersonalDetails.setBounds(0,150,300,50);
         deletePersonalDetails.setBackground(new Color(0,0,102));
         deletePersonalDetails.setForeground(Color.white);
         deletePersonalDetails.setFont(new Font("Tahoma", Font.PLAIN, 20));
         deletePersonalDetails.setMargin(new Insets(0,0,0,40));
+        deletePersonalDetails.addActionListener(this);
         p2.add(deletePersonalDetails);
 
         checkPackages = new JButton("Check Packages");
@@ -198,6 +199,8 @@ public class Dashboard extends JFrame implements ActionListener {
             new Payment();
         } else if(ae.getSource()==about) {
             new About();
+        } else if (ae.getSource()==deletePersonalDetails) {
+            new DeleteDetails(username);
         }
     }
 
