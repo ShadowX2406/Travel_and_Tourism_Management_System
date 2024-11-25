@@ -28,7 +28,7 @@ public class DeleteDetails extends JFrame implements ActionListener {
         add(lblid);
 
         JLabel labelid = new JLabel("");
-        labelid.setBounds(220,50,150,25);
+        labelid.setBounds(220,110,150,25);
         add(labelid);
 
         JLabel lblnumber = new JLabel("Number");
@@ -60,7 +60,7 @@ public class DeleteDetails extends JFrame implements ActionListener {
         add(lblcountry);
 
         JLabel labelcountry = new JLabel("");
-        labelcountry.setBounds(690,110,150,25);
+        labelcountry.setBounds(690,50,150,25);
         add(labelcountry);
 
         JLabel lbladdress = new JLabel("Address");
@@ -121,11 +121,10 @@ public class DeleteDetails extends JFrame implements ActionListener {
                 labelgender.setText(rs.getString("gender"));
                 labelcountry.setText(rs.getString("country"));
                 labeladdress.setText(rs.getString("address"));
+                labelname.setText(rs.getString("name"));
                 labelphone.setText(rs.getString("phone"));
                 labelemail.setText(rs.getString("email"));
-
             }
-
 
         } catch (Exception e) {
         }
